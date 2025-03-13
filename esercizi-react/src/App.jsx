@@ -1,9 +1,12 @@
-import Hello from "./Hello";
+import { createRoot } from "react-dom/client";
+import { Hello } from "./Hello";
 
-export default function App() {
+export function App() {
   return (
     <div>
       <Hello />
     </div>
   );
 }
+
+createRoot(document.getElementById("root")).render(<App />);
