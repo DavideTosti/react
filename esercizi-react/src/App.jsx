@@ -1,4 +1,3 @@
-import { createRoot } from "react-dom/client";
 import { Hello } from "./Hello";
 
 export function App() {
@@ -8,5 +7,3 @@ export function App() {
     </div>
   );
 }
-
-createRoot(document.getElementById("root")).render(<App />);

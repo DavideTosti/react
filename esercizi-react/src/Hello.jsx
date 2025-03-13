@@ -1,3 +1,9 @@
+import { Message } from "./Message";
+
 export function Hello() {
-  return <h2>Hello, World!</h2>;
+  return (
+    <h2>
+      Hello, World! <Message />
+    </h2>
+  );
 }

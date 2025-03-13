@@ -1,0 +1,4 @@
+
+// è possibile usare il componente Hello più di una volta nel componente App, quel componente verrà visualizzato tutte le volte
+
+// è possibile inserire Message direttamente in App, la differenza è che non sarà annidato all'interno di Hello
