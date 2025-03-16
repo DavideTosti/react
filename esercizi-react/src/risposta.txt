@@ -1,0 +1,1 @@
+impedire che l'attributo nome del pulsante venga stampato sulla console quando si fa clic sull'immagine può essere fatto tarmite lo stopPropagation
