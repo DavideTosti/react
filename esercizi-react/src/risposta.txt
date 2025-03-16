@@ -1,0 +1,1 @@
+Quando chiamiamo la funzione setter, dovremmo usare una funzione come parametro. Questo garantisce che il valore precedente si basi sempre sull'ultimo valore aggiornato
