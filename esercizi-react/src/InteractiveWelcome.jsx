@@ -10,12 +10,7 @@ export function InteractiveWelcome() {
 
   return (
     <div>
-      <input
-        type="text"
-        value={name}
-        onChange={handleChange}
-        placeholder="Enter your name"
-      />
+      <input name="name" type="text" value={name} onChange={handleChange} />
       <Welcome name={name} />
     </div>
   );

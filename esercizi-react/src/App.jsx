@@ -11,7 +11,7 @@ export function App() {
       <h1>Interactive Welcome</h1>
       <InteractiveWelcome />
       <h1>Login Form</h1>
-      <Login onLogin={handleLogin} />
+      <Login onChange={handleLogin} />
     </div>
   );
 }
