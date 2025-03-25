@@ -2,19 +2,19 @@ import { useState } from "react";
 
 function TodoList() {
   const [todos, setTodos] = useState([]); // Stato per gestire la lista dei todo
-  const [inputValue, setInputValue] = useState(""); // Stato per gestire l'input
+  const [inputValue, setInputValue] = useState("");
 
-  // Aggiunge un nuovo todo all'array
+  
   const handleAddTodo = () => {
     if (inputValue !== "") {
-      setTodos([...todos, inputValue]); // Aggiunge l'input al nuovo array
-      setInputValue(""); // Pulisce l'input dopo l'aggiunta
+      setTodos([...todos, inputValue]);
+      setInputValue(""); 
     }
   };
 
-  // Resetta la lista dei todo
+ 
   const handleResetTodos = () => {
-    setTodos([]); // Svuota l'array
+    setTodos([]);
   };
 
   // Rimuove un todo specifico dall'array
@@ -27,7 +27,7 @@ function TodoList() {
       <input
         type="text"
         value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)} // Aggiorna l'inputValue con ciò che scrive l'utente
+        onChange={(e) => setInputValue(e.target.value)}
         placeholder="Add a new todo"
       />
       <button onClick={handleAddTodo}>Add Todo</button>
