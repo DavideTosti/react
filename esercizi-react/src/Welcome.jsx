@@ -1,8 +1,6 @@
-export function Welcome({ name, age }) {
-  return (
-    <div>
-      <p>Welcome, {name}!</p>
-      <p>Your age is {age}</p>
-    </div>
-  );
+import { useParams } from "react-router-dom";
+
+export default function Welcome() {
+  const { name = "User" } = useParams();
+  return <p>Welcome, {name}!</p>;
 }
