@@ -1,20 +1,17 @@
-import { useState } from "react";
-import Chat from "./Chat";
-import Message from "./Message";
+import { Counter } from "./Counter";
+import CurrentLocation from "./CurrentLocation";
+import GitHubUser from "./GitHubUser";
+import GitHubUsers from "./GitHubUsers";
+import { Login } from "./Login";
 
 function App() {
-  const [messages, setMessages] = useState([]);
-
-  function sendMessage(text, sender) {
-    if (!text.trim()) return; //evita messaggi vuoti o con solo lo spazio
-    setMessages([...messages, { text, sender }]);
-  }
-
   return (
     <div>
-      <h1>CHAT</h1>
-      <Chat messages={messages} />
-      <Message onSend={sendMessage} />
+      <Counter />
+      <GitHubUsers />
+      <GitHubUser />
+      <CurrentLocation />
+      <Login />
     </div>
   );
 }
