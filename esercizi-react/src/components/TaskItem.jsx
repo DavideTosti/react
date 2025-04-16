@@ -1,14 +1,15 @@
-export default function TaskItem({ task, handleComplete, handleDelete }) {
+import React from "react";
+
+function TaskItem({ task, onComplete, onDelete }) {
   return (
     <div>
-      <p style={{ textDecoration: task.completed ? "line-through" : "none" }}>
-        {task.name}{" "}
-        {/* Visualizza il nome del task con una linea se completato*/}
-      </p>
-      <button onClick={() => handleComplete(task)}>Completato</button>{" "}
-      {/*Bottone per segnare il task come completato*/}
-      <button onClick={() => handleDelete(task)}>Rimuovi</button>{" "}
-      {/*Bottone per rimuovere il task*/}
+      <p style={{ opacity: task.completato ? 0.6 : 1 }}>{task.titolo}</p>
+
+      <button onClick={() => onComplete(task.id)}>Completato</button>
+
+      <button onClick={() => onDelete(task.id)}>Cancella</button>
     </div>
   );
 }
+
+export default TaskItem;

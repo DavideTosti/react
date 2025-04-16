@@ -1,15 +1,23 @@
-import TaskItem from "./TaskItem"; // Importa il componente TaskItem
-export default function TaskList({ tasks, handleComplete, handleDelete }) {
+import React from "react";
+import TaskItem from "./TaskItem"; // Importa TaskItem
+
+function TaskList({ tasks, onComplete, onDelete }) {
+  if (tasks.length === 0) {
+    return <p>Nessun task presente</p>;
+  }
+
   return (
-    <ul>
-      {tasks.map((task, index) => (
+    <div>
+      {tasks.map((task) => (
         <TaskItem
-          key={index} // Chiave unica per ogni elemento della lista
-          task={task} // Passa il task al componente TaskItem
-          handleComplete={handleComplete} // Passa la funzione handleComplete
-          handleDelete={handleDelete} // Passa la funzione handleDelete
+          key={task.id}
+          task={task}
+          onComplete={onComplete}
+          onDelete={onDelete}
         />
       ))}
-    </ul>
+    </div>
   );
 }
+
+export default TaskList;

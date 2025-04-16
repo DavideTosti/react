@@ -1,28 +1,24 @@
-import { useState } from "react"; // Importa l'hook useState da React
-export default function TaskForm({ handleSubmit }) {
-  const [inputValue, setInputValue] = useState(""); // Stato per memorizzare il valore dell'input
-  // Gestisce l'input nel campo di testo
-  function handleChange(event) {
-    setInputValue(event.target.value); // Aggiorna lo stato con il valore dell'input
+import React, { useState } from "react";
+
+function TaskForm({ onAddTask }) {
+  const [testo, setTesto] = useState("");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    onAddTask(testo);
+    setTesto("");
   }
-  // Gestisce la sottomissione del task
-  function onSubmit(event) {
-    event.preventDefault(); // Previene il comportamento predefinito del form
-    handleSubmit(inputValue); // Passa il valore dell'input alla funzione handleSubmit
-    setInputValue(""); // Resetta il campo di testo
-  }
+
   return (
-    <form onSubmit={onSubmit}>
-      {/*Gestisce la sottomissione del form */}
-      <h3>Inserisci Task</h3>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
-        placeholder="Cosa farai oggi?"
-        value={inputValue} // Valore controllato dell'input
-        onChange={handleChange} // Gestisce il cambiamento dell'input
+        value={testo}
+        onChange={(e) => setTesto(e.target.value)}
       />
-      <button type="submit">Salva Task</button>{" "}
-      {/*Bottone per salvare il task*/}
+      <button type="submit">Salva Task</button>
     </form>
   );
 }
+
+export default TaskForm;
