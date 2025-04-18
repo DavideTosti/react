@@ -16,14 +16,14 @@ function App() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  const handleAddTask = (titolo) => {
+  function handleAddTask(titolo) {
     const task = {
-      id: Date.now().toString(),
+      id: tasks.length.toString(),
       titolo,
       completato: false,
     };
     setTasks((prevTasks) => [...prevTasks, task]);
-  };
+  }
 
   function handleCompleteTask(id) {
     setTasks((prevTasks) =>
